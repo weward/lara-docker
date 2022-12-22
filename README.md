@@ -7,11 +7,12 @@ Files
 
 
 ### Required Actions
-- Configure the `.env.example` file inside the root of the laravel application
+- Configure the `.env.example` file inside the root of the laravel application (this will be copied to `.env` through `.docker/entrypoint.sh`)
 - Give privilege to the `docker/entrypoint.sh` file: 
 
 ```
-// from App root, go inside docker folder
+# from App root, cd to docker folder
+
 cd docker 
 sudo chmod 744 entrypoint.sh
 
@@ -20,20 +21,27 @@ sudo chmod 744 entrypoint.sh
 
 
 ### Build (and run)
+- cd to docker folder `cd docker` and run: 
 
-- `docker-compose up -d --build`
+```
+docker-compose up -d --build
+```
 
 
 ### Run (detached)
 
-- `docker-compose up -d`
+```
+docker-compose up -d
+```
 
 - App url: `http://localhost:8000`
 
 
 ### Stop 
 
-- `docker-compose stop`
+```
+docker-compose stop
+```
 
 
 

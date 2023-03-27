@@ -13,10 +13,6 @@ RUN docker-php-ext-install soap curl
 WORKDIR /var/www
 COPY . .
 
-
-# Give permission
-RUN chown -R www-data:www-data /var/www
-
 # Copy & Move Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 COPY --from=composer:2.4.4 /usr/bin/composer /usr/local/bin/composer
